@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/api/v1', (req, res) => res.status(200).json({ message: 'hello' }));
 app.use('/api/v1/openai', openaiRoutes);
 
 app.listen(port, () => {
